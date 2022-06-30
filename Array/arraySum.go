@@ -10,3 +10,30 @@ func Sum(array []int) int{
 	return sum
 }
 
+func SumAll(numbersSum ...[]int) []int{
+	var sums []int
+
+	for _, numbers := range numbersSum{
+		sums = append(sums, Sum(numbers))
+	}
+
+	return sums
+}
+
+func SumAllTail(numbersSumTails ...[]int) []int{
+	var sums []int
+
+	for _, numbers := range numbersSumTails{
+		if len(numbers) == 0 || len(numbers) == 1{
+			sums = append(sums, 0)
+		}else{
+			tail := numbers[1:]
+			sums = append(sums, Sum(tail))
+		}
+		
+		
+		
+	}
+
+	return sums
+}
